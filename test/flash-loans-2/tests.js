@@ -18,21 +18,13 @@ describe('Flash Loans Exercise 2', function () {
         /** CODE YOUR SOLUTION HERE */
 
         // TODO: Get contract objects for relevant On-Chain contracts
-        const usdc = await ethers.getContractAt("@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20", USDC_ADDRESS);
-        const impersonatedSigner = await ethers.getImpersonatedSigner(IMPERSONATED_ACCOUNT_ADDRESS);
 
         // TODO: Deploy Flash Loan contract
-        const FlashLoanReceiverFactory = await ethers.getContractFactory(
-            'contracts/flash-loans-2/FlashLoan.sol:FlashLoan',
-            impersonatedSigner
-        );
-        const flashLoanContract = await FlashLoanReceiverFactory.deploy(AAVE_LENDING_POOL_ADDRESS);
 
         // TODO: Send USDC to contract for fees
-        await usdc.connect(impersonatedSigner).transfer(await flashLoanContract.getAddress(), FEE_AMOUNT);
 
         // TODO: Execute successfully a Flash Loan of $100,000,000 (USDC)
-        await flashLoanContract.getFlashLoan(await usdc.getAddress(), BORROW_AMOUNT)
+        
     });
 
 });

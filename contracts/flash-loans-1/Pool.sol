@@ -16,14 +16,7 @@ contract Pool {
 
     // TODO: Complete this function
     function flashLoan(uint256 amount) external {
-
-        uint256 poolBalance = address(this).balance;
-        require(poolBalance >= amount, "not enough liquidity");
-
-        IReceiver(msg.sender).getETH{value: amount}();
-
-        uint256 balanceAfterCallback = address(this).balance;
-        require(balanceAfterCallback >= poolBalance, "ETH wasn't paid back");
+        
     }
 
     receive() external payable {}

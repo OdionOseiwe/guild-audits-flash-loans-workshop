@@ -13,15 +13,10 @@ interface IPool {
 contract GreedyReceiver {
 
     // TODO: Implement Greedy Receiver Logic (Not paying back the loan)
-    IPool pool;
-
-    constructor(address _poolAddress) {
-        pool = IPool(_poolAddress);
-    }
-
+    
     // TODO: Complete this function
     function flashLoan(uint256 amount) external {
-        pool.flashLoan(amount);
+        
     }
 
     // TODO: Complete this function

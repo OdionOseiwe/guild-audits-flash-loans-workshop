@@ -22,13 +22,11 @@ contract Receiver {
 
     // TODO: Complete this function
     function flashLoan(uint256 amount) external {
-        pool.flashLoan(amount);
     }
 
     // TODO: Complete this function
     function getETH() external payable {
-        (bool success, ) = msg.sender.call{value: msg.value}("");
-        require(success, "failed to send ETH");
+        
     }
 
 }
